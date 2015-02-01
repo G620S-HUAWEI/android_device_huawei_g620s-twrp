@@ -6,14 +6,21 @@ else
 	LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
 endif
 
+# Recovery
+PRODUCT_PACKAGES += \
+    minivold
+
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/kernel:kernel \
     $(LOCAL_PATH)/dt.img:dt.img \
     $(LOCAL_PATH)/recovery/fstab.qcom:root/fstab.qcom \
     $(LOCAL_PATH)/recovery/init:root/init \
     $(LOCAL_PATH)/recovery/charger:root/charger \
-    $(LOCAL_PATH)/recovery/sbin/healthd:root/sbin/healthd
+    $(LOCAL_PATH)/recovery/sbin/healthd:root/sbin/healthd \
+    $(LOCAL_PATH)/recovery/sbin/rmt_storage:root/sbin/rmt_storage \
+    $(LOCAL_PATH)/recovery/sbin/rmt_oeminfo:root/sbin/rmt_oeminfo \
+    $(LOCAL_PATH)/recovery/sbin/vm_bms:root/sbin/vm_bms \
 
 $(call inherit-product, build/target/product/full.mk)
 
-PRODUCT_NAME := aquarise5
+PRODUCT_NAME := g620s

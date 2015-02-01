@@ -25,8 +25,12 @@ BOARD_KERNEL_PAGESIZE        := 2048
 BOARD_KERNEL_SEPARATED_DT    := true
 BOARD_MKBOOTIMG_ARGS         := --dt device/huawei/g620s/dt.img --kernel_offset 0x00008000 --ramdisk_offset 0x01000000 --tags_offset 0x00000100
 
-# USB Mounting
-TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/msm_hsusb/gadget/lun%d/file
+# Vold
+TARGET_USE_CUSTOM_LUN_FILE_PATH     := /sys/devices/platform/msm_hsusb/gadget/lun%d/file
+BOARD_VOLD_DISC_HAS_MULTIPLE_MAJORS := true
+BOARD_VOLD_EMMC_SHARES_DEV_MAJOR    := true
+BOARD_VOLD_MAX_PARTITIONS           := 65
+COMMON_GLOBAL_CFLAGS += -DNO_SECURE_DISCARD
 
 # Recovery
 TARGET_USERIMAGES_USE_EXT4     := true

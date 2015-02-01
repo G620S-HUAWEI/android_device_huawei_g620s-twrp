@@ -8,4 +8,4 @@
 /system       ext4   /dev/block/bootdevice/by-name/system         flags=display="system"
 
 /external_sd  vfat   /dev/block/mmcblk1p1 /dev/block/mmcblk1      flags=display="external_sd";storage;wipeingui;removable
-/usbdisk      vfat   /devices/platform/msm_hsusb                  flags=display="usbdisk";storage;removable
+/usbdisk      vfat   /devices/platform/msm_hsusb                  flags=display="usb_disk";storage;removable
